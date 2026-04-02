@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { Header } from "@/components/Header";
 import { COLORS } from "@/lib/colors";
+import { Header } from "@/components/Header";
+import { ViewCanvas } from "@/components/ViewCanvas";
 
 const alpinoSans = localFont({
   src: [
@@ -32,7 +33,10 @@ export default function RootLayout({
         style={{ backgroundColor: COLORS.fizziYellow }}
       >
         <Header />
-        <main>{children}</main>
+        <main>
+          {children}
+          <ViewCanvas />
+        </main>
       </body>
     </html>
   );
